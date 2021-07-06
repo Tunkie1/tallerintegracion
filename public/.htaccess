@@ -4,8 +4,8 @@
     </IfModule>
 
     RewriteEngine on
-    RewriteCond %{REQUEST_URI} !^public
-    RewriteRule ^(.*)$ public/$1 [L]
+    RewriteCond $1 !^(index.php|public|css|js|img|fonts|robots.txt|app|manuales|uploadFiles)
+    RewriteRule ^(.*)$ /index.php/$1 [L]
 
     # Redirect Trailing Slashes If Not A Folder...
     RewriteCond %{REQUEST_FILENAME} !-d
