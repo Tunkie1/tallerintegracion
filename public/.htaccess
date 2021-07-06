@@ -3,9 +3,11 @@
         Options -MultiViews -Indexes
     </IfModule>
 
-    RewriteEngine on
-    RewriteCond $1 !^(index.php|public|css|js|img|fonts|robots.txt|app|manuales|uploadFiles)
-    RewriteRule ^(.*)$ /index.php/$1 [L]
+    RewriteEngine On
+
+    # Handle Authorization Header
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 
     # Redirect Trailing Slashes If Not A Folder...
     RewriteCond %{REQUEST_FILENAME} !-d
