@@ -37,7 +37,7 @@
         </div>
     </div>
     <div class="pull-right">
-        <a class="btn btn-primary" href="{{ route('blogs.index') }}"> Atras</a>
+        <a class="btn btn-primary" href="{{ route('/productosCliente') }}"> Atras</a>
     </div>
     <br>
     <button type="button" class="btn btn-success save-data" data-toggle="modal" data-target="#exampleModal">
