@@ -39,12 +39,6 @@ class HomeController extends Controller
 
         $usuario = User::findOrFail($id);
 
-        $request->validate([
-            'name' => 'required',
-            'email' => 'required',
-            'user' => 'required',
-        ]);
-
         $usuario->name = $request->input('name');
         $usuario->email = $request->input('email');
         $usuario->password = Hash::make($request->input('password'));
